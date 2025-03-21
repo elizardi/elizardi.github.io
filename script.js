@@ -1,54 +1,38 @@
-<script>
-  const images = [
-    'Image1.jpg',
-    'Image2.jpg',
-    'Image3.jpg',
-    'Image4.jpg',
-    'Image5.jpg',
-    'Image6.jpg',
-  ];
+const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
-  let currentIndex = 0;
+let currentIndex = 0;
 
-  const track = document.querySelector('.carousel-track');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
+function updateCarousel() {
+    const imageWidth = images[0].getBoundingClientRect().width;
+    const amountToMove = imageWidth * currentIndex * -1;
+    track.style.transform = `translateX(${amountToMove}px)`;
+}
 
-  function updateImages() {
-    track.innerHTML = ''; // Clear existing images
+// Arrange images side by side (in case CSS doesn't do it)
+images.forEach((img, index) => {
+    img.style.minWidth = '100%';
+});
 
-    const firstImage = images[currentIndex];
-    const secondImage = images[currentIndex + 1];
-
-    const img1 = document.createElement('img');
-    img1.src = firstImage;
-    img1.className = 'carousel-image';
-
-    track.appendChild(img1);
-
-    if (secondImage) {
-      const img2 = document.createElement('img');
-      img2.src = secondImage;
-      img2.className = 'carousel-image';
-      track.appendChild(img2);
+nextButton.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // loop to start
     }
-  }
+    updateCarousel();
+});
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex - 2 >= 0) {
-      currentIndex -= 2;
-      updateImages();
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = images.length - 1; // loop to end
     }
-  });
+    updateCarousel();
+});
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex + 2 < images.length) {
-      currentIndex += 2;
-      updateImages();
-    }
-  });
-
-  // Initial render
-  updateImages();
-</script>
-
+// Initialize position
+updateCarousel();
