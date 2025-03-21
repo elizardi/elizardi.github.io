@@ -1,26 +1,54 @@
-// Array of image pairs (left image and right image)
-const images1 = ["Image1.jpg", "Image3.JPG", "image5.jpg"];
-const images2 = ["image2.jpg", "Image4.jpg", "image6.jpg"];
+<script>
+  const images = [
+    'Image1.jpg',
+    'Image2.jpg',
+    'Image3.jpg',
+    'Image4.jpg',
+    'Image5.jpg',
+    'Image6.jpg',
+  ];
 
-let index = 0; // Track current image index
+  let currentIndex = 0;
 
-// Function to change images
-function updateImages() {
-    document.getElementById("Image1").src = images1[index];
-    document.getElementById("Image2").src = images2[index];
-}
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
 
-// Show the next images
-function nextImage() {
-    index = (index + 1) % images1.length; // Loop through images
-    updateImages();
-}
+  function updateImages() {
+    track.innerHTML = ''; // Clear existing images
 
-// Show the previous images
-function prevImage() {
-    index = (index - 1 + images1.length) % images1.length; // Loop backward
-    updateImages();
-}
+    const firstImage = images[currentIndex];
+    const secondImage = images[currentIndex + 1];
 
-// Load first set of images on page load
-window.onload = updateImages;
+    const img1 = document.createElement('img');
+    img1.src = firstImage;
+    img1.className = 'carousel-image';
+
+    track.appendChild(img1);
+
+    if (secondImage) {
+      const img2 = document.createElement('img');
+      img2.src = secondImage;
+      img2.className = 'carousel-image';
+      track.appendChild(img2);
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex - 2 >= 0) {
+      currentIndex -= 2;
+      updateImages();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex + 2 < images.length) {
+      currentIndex += 2;
+      updateImages();
+    }
+  });
+
+  // Initial render
+  updateImages();
+</script>
+
