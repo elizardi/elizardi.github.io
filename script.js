@@ -6,8 +6,8 @@ let index = 0; // Track current image index
 
 // Function to change images
 function updateImages() {
-    document.getElementById("image1").src = images1[index];
-    document.getElementById("image2").src = images2[index];
+    document.getElementById("Image1").src = images1[index];
+    document.getElementById("Image2").src = images2[index];
 }
 
 // Show the next images
