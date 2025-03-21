@@ -1,13 +1,13 @@
 // List of images (Add more images here)
-const images1 = ["images/image1.jpg", "images/image3.jpg", "images/image5.jpg"];
-const images2 = ["images/image2.jpg", "images/image4.jpg", "images/image6.jpg"];
+const images1 = ["Image1.jpg", "Image3.JPG", "Image5.jpg"];
+const images2 = ["Image2.jpg", "Image4.jpg", "Image6.jpg"];
 
 let index = 0; // Track current image index
 
 // Function to change images
 function updateImages() {
-    document.getElementById("image1").src = images1[index];
-    document.getElementById("image2").src = images2[index];
+    document.getElementById("Image1").src = images1[index];
+    document.getElementById("Image2").src = images2[index];
 }
 
 // Show the next images
