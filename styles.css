@@ -1,40 +1,63 @@
 body {
     font-family: 'Playfair Display', serif;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 50px;
+    position: relative;
 }
 
 .gallery {
     display: flex;
-    justify-content: center;
     gap: 20px;
-    padding: 20px;
 }
 
 .gallery img {
-    width: 30%;
+    width: 300px; /* Adjust based on your design */
+    height: auto;
     object-fit: cover;
+    border-radius: 5px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: gray;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
 }
