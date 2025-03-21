@@ -2,37 +2,46 @@ const track = document.querySelector('.carousel-track');
 const images = Array.from(track.children);
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+const dotsContainer = document.querySelector('.carousel-dots');
 
 let currentIndex = 0;
 
-function updateCarousel() {
-    const imageWidth = images[0].getBoundingClientRect().width;
-    const amountToMove = imageWidth * currentIndex * -1;
-    track.style.transform = `translateX(${amountToMove}px)`;
-}
-
-// Arrange images side by side (in case CSS doesn't do it)
-images.forEach((img, index) => {
+// Set image width
+images.forEach(img => {
     img.style.minWidth = '100%';
 });
 
+// Create dots
+images.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('carousel-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+    });
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dot');
+
+function updateCarousel() {
+    const imageWidth = images[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
+}
+
 nextButton.addEventListener('click', () => {
-    if (currentIndex < images.length - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // loop to start
-    }
+    currentIndex = (currentIndex + 1) % images.length;
     updateCarousel();
 });
 
 prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = images.length - 1; // loop to end
-    }
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateCarousel();
 });
 
-// Initialize position
+// Initialize
 updateCarousel();
