@@ -27,7 +27,14 @@ body {
      text-decoration: none;
      color: black;
  }
- 
+
+body {
+    display: grid;
+    place-items: center; /* Centers both horizontally & vertically */
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
 
 .grid-container {
     display: grid;
