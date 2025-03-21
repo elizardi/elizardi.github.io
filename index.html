@@ -20,10 +20,17 @@
         </nav>
     </header>
 
-    <section class="gallery">
-        <img src="Image1.jpg" alt="Portrait 1">
-        <img src="Image2.jpg" alt="Portrait 2">
-        <img src="Image3.JPG" alt="Portrait 3">
-    </section>
+     <main class="gallery-container">
+        <button class="nav-btn left" onclick="prevImage()">&#9664;</button> <!-- Left Button -->
+        
+        <div class="gallery">
+            <img id="image1" src="images/image1.jpg" alt="First Image">
+            <img id="image2" src="images/image2.jpg" alt="Second Image">
+        </div>
+
+        <button class="nav-btn right" onclick="nextImage()">&#9654;</button> <!-- Right Button -->
+    </main>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>
