@@ -28,40 +28,46 @@ body {
      color: black;
  }
  
-.gallery-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 50px;
-    position: relative;
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.gallery {
-    display: flex;
-    gap: 20px;
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
 }
 
-.gallery img {
-    width: 700px; /* Adjust based on your design */
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
+.carousel-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.nav-btn {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.3s;
+button.prev,
+button.next {
+  background-color: #eee;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.nav-btn:hover {
-    color: gray;
+button.prev:hover,
+button.next:hover {
+  background-color: #ccc;
 }
-
-footer {
-    margin-top: 20px;
-    font-size: 14px;
 }
