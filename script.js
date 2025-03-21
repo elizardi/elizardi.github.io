@@ -1,6 +1,6 @@
 // Array of image pairs (left image and right image)
-const images1 = ["images/Image1.jpg", "images/Image3.JPG", "Images/image5.jpg"];
-const images2 = ["Images/image2.jpg", "images/Image4.jpg", "Images/image6.jpg"];
+const images1 = ["Image1.jpg", "Image3.JPG", "image5.jpg"];
+const images2 = ["image2.jpg", "Image4.jpg", "image6.jpg"];
 
 let index = 0; // Track current image index
 
