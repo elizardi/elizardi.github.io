@@ -39,7 +39,7 @@ body {
 }
 
 .grid-container img {
-    width: 30%;
+    width: 70%;
     height: auto;
     object-fit: cover; /* Ensures images fill their grid spaces properly */
     border-radius: 8px; /* Optional: rounded corners */
