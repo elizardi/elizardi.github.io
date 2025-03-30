@@ -1,2 +1,3 @@
 # personal_site
-My Page
+The code and files in this repository create my personal website.
+
