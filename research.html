@@ -1,49 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Ramirez Lizardi</title>
-    </head>
+  <meta charset="UTF-8">
+  <title>Eduardo Ramirez Lizardi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .about-title {
+      font-size: 2em;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .about-me {
+      max-width: 1200px;
+      width: 90%;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
 <body>
-    <header>
-         <h1><a href="index.html" target="_blank" title="Home">Edu.</a></h1>
-         <nav>
-             <ul>
-                 <li><a href="about.html">About</a></li>
-                 <li><a href="research.html">Research</a></li>
-                 <li><a href="photography.html">Photography</a></li>
-             </ul>
-         </nav>
-    </header>
+  <header>
+    <h1><a href="index.html" title="Home">Edu.</a></h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="photography.html">Photography</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<style>
-  .about-me {width: 1200px;           /* Set the width */
-   margin: 0 auto;
-    text-align: center;
-    margin-top: 40px;
-  }
-
-</style>
-
-<style>
-  .about-pub {width: 200px;
-   margin: 0 auto;
-    margin-top: 20px;
-  }
-
-</style>
-
-  <div class="about-title">Research:</div>
+  <main>
+    <div class="about-title">Research:</div>
 
     <div class="about-me">
-      <div class="about-me">
-      Ramirez Lizardi, Fevang, Røed, Øien. <i>Effects of Health Shocks on Adult Children's Labor Market Outcomes and Well-Being </i> (2025) <a href="https://docs.iza.org/dp17232.pdf">IZA - Working Paper</a>.
-
-    </div>  
-  </div>  
+      Ramirez Lizardi, Fevang, Røed, Øien. <i>Effects of Health Shocks on Adult Children's Labor Market Outcomes and Well-Being</i> (2025). 
+      <a href="https://docs.iza.org/dp17232.pdf" target="_blank">IZA - Working Paper</a>.
+    </div>
+  </main>
 </body>
 </html>
