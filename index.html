@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <title>Eduardo Ramirez Lizardi</title>
     </head>
 <body>
     <header>
-         <h1>Edu</h1>
+       <h1><a href="index.html" target="_blank" title="Home">Edu</a></h1>
          <nav>
              <ul>
                  <li><a href="about.html">About</a></li>
-                 <li><a href="#">Research</a></li>
-                 <li><a href="#">Photography</a></li>
+                 <li><a href="research.html">Research</a></li>
+                 <li><a href="photography.html">Photography</a></li>
              </ul>
          </nav>
     </header>
     <div class="grid-container">
-        <img src="Image1.jpg" alt="Image 1">
-        <img src="Image2.jpg" alt="Image 2">
-        <img src="Image3.jpg" alt="Image 3">
-        <img src="Image4.jpg" alt="Image 4">
-        <img src="Image5.jpg" alt="Image 5">
-        <img src="Image6.jpg" alt="Image 6">
+           <a href="about.html" class="grid-item">
+            <img src="Image1.png" alt="Image 1">
+            <div class="overlay">About</div>
+        </a>
+        <a href="research.html" class="grid-item">
+            <img src="Image2.jpg" alt="Image 2">
+            <div class="overlay">Research</div>
+        </a>
+        <a href="photography.html" class="grid-item">
+            <img src="Image3.jpg" alt="Image 3">
+            <div class="overlay">Photography</div>
+        </a>
     </div>
 </body>
 </html>

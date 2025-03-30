@@ -2,25 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
-</head>
+    <title>Eduardo Ramirez Lizardi</title>
+    </head>
 <body>
-     <link rel="stylesheet" href="styles.css">
     <header>
-        <h1>About Me</h1>
-        <nav>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Research</a></li>
-                <li><a href="#">Photography</a></li>
-            </ul>
-        </nav>
+       <h1><a href="index.html" target="_blank" title="Home">Edu</a></h1>
+         <nav>
+             <ul>
+                 <li><a href="about.html">About</a></li>
+                 <li><a href="research.html">Research</a></li>
+                 <li><a href="photography.html">Photography</a></li>
+             </ul>
+         </nav>
     </header>
 
-    <section>
-        <p>Welcome to my website. I am Eduardo and I am a PhD Research Fellow at the University of Oslo. Here I will keep a list of my research and some selected pictures that I have taken.</p>
-    </section>
+<style>
+ .about-me {
+    width: 300px;
+    margin: 0 auto;
+    text-align: justify;
+    margin-top: 40px;
+    height: 100px;
+  }
+
+</style>
+  <div class="about-title">A little about me:</div>
+
+    <div class="about-me">
+      <div class="about-me">
+      I'm a PhD Student in Health Economics at the University of Oslo.
+      My research interest: Migrant's health, labor markets. In my free time I go out and take pictures
+    </div>  
+  </div>  
+
+<div id="icon-links" style="text-align: center; margin-top: 10px;">
+  <a href="https://www.linkedin.com/in/eramirezlizardi/" target="_blank" title="linkedin"><i data-lucide="linkedin"></i></a>
+  <a href="https://www.instagram.com/edualbert/" target="_blank" title="Instagram"><i data-lucide="instagram"></i></a>
+  <a href="https://x.com/Ewwardo" target="_blank" title="X"><i data-lucide="twitter"></i></a>
+</div>
+
+<style>
+  #icon-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  #icon-links i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+  }
+
+  #icon-links a:hover i {
+    color: #555;
+  }
+</style>
+
+<script>
+  lucide.createIcons();
+</script>
 </body>
 </html>
