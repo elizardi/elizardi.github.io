@@ -18,7 +18,11 @@ header {
   header h1 {
     margin: 0;
   }
-
+  
+  header h1 a {
+    text-decoration: none;
+    color: inherit; /* Inherits the h1 text color */
+  }
   nav ul {
     list-style: none;
     padding: 0;
