@@ -1,35 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nature Album</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Cities Album</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .gallery {
+      max-width: 900px;
+      margin: 40px auto;
+      position: relative;
+      text-align: center;
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .thumbnails img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border 0.2s ease-in-out;
+    }
+
+    .thumbnails img.active {
+      border: 2px solid black;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+    }
+
+    .nav-buttons button {
+      padding: 6px 12px;
+      font-family: inherit;
+      background-color: white;
+      color: #333;
+      border: 1px solid #333;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .about-title {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-       <h1><a href="index.html">Edu.</a></h1>
-         <nav>
-             <ul>
-                 <li><a href="about.html">About</a></li>
-                 <li><a href="research.html">Research</a></li>
-                 <li><a href="photography.html">Photography</a></li>
-             </ul>
-         </nav>
-    </header>
-<div style="text-align: left; padding-left: 10%; margin-top: 20px;">
+  <header>
+    <h1><a href="index.html">Edu.</a></h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="photography.html">Photography</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div style="text-align: left; padding-left: 10%; margin-top: 20px;">
     <a href="photography.html" class="back-button" style="text-decoration: none; color: #333;">← Back</a>
-</div>
-    <div class="about-title">Nature</div>
-    <div class="grid-container">
-        <div class="grid-item"><img src="nature/pic1.jpg" alt="City 1"></div>
-        <div class="grid-item"><img src="nature/pic2.jpg" alt="City 2"></div>
-        <div class="grid-item"><img src="nature/pic3.jpg" alt="City 3"></div>
-        <div class="grid-item"><img src="nature/pic4.jpg" alt="City 4"></div>
-        <div class="grid-item"><img src="nature/pic5.jpg" alt="City 5"></div>
-        <div class="grid-item"><img src="nature/pic7.jpg" alt="City 6"></div>
-        <!-- Add more images -->
+  </div>
+
+  <div class="about-title">Cities</div>
+
+  <div class="gallery">
+    <img id="mainImage" class="main-image" src="cities/pic1.JPEG" alt="City" />
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">← Prev</button>
+      <button onclick="nextSlide()">Next →</button>
     </div>
+
+    <div class="thumbnails" id="thumbnailContainer"></div>
+  </div>
+
+  <script>
+    const images = [
+      "nature/pic1.jpg",
+      "nature/pic2.jpg",
+      "nature/pic3.jpg",
+      "nature/pic4.jpg",
+      "nature/pic5.jpg",
+      "nature/pic6.jpg"
+    ];
+
+    let currentIndex = 0;
+    const mainImage = document.getElementById("mainImage");
+    const thumbnailContainer = document.getElementById("thumbnailContainer");
+
+    function setImage(index) {
+      currentIndex = index;
+      mainImage.src = images[index];
+      const thumbs = document.querySelectorAll(".thumbnails img");
+      thumbs.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      setImage(currentIndex);
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      setImage(currentIndex);
+    }
+
+    // Create thumbnails
+    images.forEach((src, i) => {
+      const thumb = document.createElement("img");
+      thumb.src = src;
+      thumb.alt = `Thumbnail ${i + 1}`;
+      thumb.addEventListener("click", () => setImage(i));
+      thumbnailContainer.appendChild(thumb);
+    });
+
+    setImage(0); // Initialize
+  </script>
 </body>
 </html>
